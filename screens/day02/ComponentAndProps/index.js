@@ -1,14 +1,10 @@
 import React, {Component} from 'react';
-import {Text} from 'react-native';
+import {Text, StyleSheet} from 'react-native';
 import Child from './Child';
 
 // 1. Function and Class Components
 function Welcome() {
-  return (
-    <Text style={{fontSize: 20, textAlign: 'center', fontWeight: 'bold'}}>
-      Hello AE
-    </Text>
-  );
+  return <Text style={styles.txt}>Hello AE</Text>;
 }
 
 export default class ComponentAndProps extends Component {
@@ -37,3 +33,7 @@ export default class ComponentAndProps extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  txt: {fontSize: 20, textAlign: 'center', fontWeight: 'bold'},
+});

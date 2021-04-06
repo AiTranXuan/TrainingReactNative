@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import ComponentAndProps from './ComponentAndProps';
 import ConditionalRendering from './ConditionalRendering';
 import JSX from './JSX';
@@ -13,12 +13,16 @@ export default class Day02 extends Component {
 
   render() {
     return (
-      <View style={{flex: 1}}>
+      <View style={styles.main}>
         <JSX />
         <ComponentAndProps />
-        <StateAndLifeCycle/>
+        <StateAndLifeCycle />
         <ConditionalRendering />
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  main: {flex: 1},
+});

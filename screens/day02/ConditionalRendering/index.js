@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 
 export default class ConditionalRendering extends Component {
   constructor(props) {
@@ -22,26 +22,14 @@ export default class ConditionalRendering extends Component {
       case 1:
         return (
           <>
-            <Image
-              source={{uri}}
-              resizeMode="contain"
-              style={{width: 10, height: 10}}
-            />
+            <Image source={{uri}} resizeMode="contain" style={styles.img} />
           </>
         );
       case 2:
         return (
           <>
-            <Image
-              source={{uri}}
-              resizeMode="contain"
-              style={{width: 20, height: 20}}
-            />
-            <Image
-              source={{uri}}
-              resizeMode="contain"
-              style={{width: 20, height: 20}}
-            />
+            <Image source={{uri}} resizeMode="contain" style={styles.img} />
+            <Image source={{uri}} resizeMode="contain" style={styles.img} />
           </>
         );
       default:
@@ -56,23 +44,13 @@ export default class ConditionalRendering extends Component {
     return (
       <TouchableOpacity
         onPress={this.handleActionButton}
-        style={{
-          backgroundColor: 'red',
-          width: 200,
-          height: 200,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
+        style={styles.mainUI1}>
         {/* 2. Ternary Operation(Phép toán 3 ngôi): condition ? trueExpression : falseExpression  */}
         <Text>{showUI1Detail ? 'Show' : "Don't show"}</Text>
         {/* 3.Logical && operator(Toán tử logic): expression01 && expression02  */}
         {showUI1Detail && (
           <>
-            <Image
-              source={{uri}}
-              resizeMode="contain"
-              style={{width: 100, height: 100}}
-            />
+            <Image source={{uri}} resizeMode="contain" style={styles.bigImg} />
 
             {this.renderNumberOfNgocTrinh(2)}
           </>
@@ -83,7 +61,7 @@ export default class ConditionalRendering extends Component {
 
   renderUI2 = () => {
     return (
-      <View style={{backgroundColor: 'blue', width: 200, height: 200}}>
+      <View style={styles.mainUI2}>
         <Text>renderUI2</Text>
       </View>
     );
@@ -97,3 +75,16 @@ export default class ConditionalRendering extends Component {
     return this.renderUI2();
   }
 }
+
+const styles = StyleSheet.create({
+  bigImg: {width: 100, height: 100},
+  img: {width: 20, height: 20},
+  mainUI1: {
+    backgroundColor: 'red',
+    width: 200,
+    height: 200,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  mainUI2: {backgroundColor: 'blue', width: 200, height: 200},
+});

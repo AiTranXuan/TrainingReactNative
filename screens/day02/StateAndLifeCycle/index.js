@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text} from 'react-native';
+import {Text, StyleSheet} from 'react-native';
 import ChildComponent from './ChildComponent';
 
 // https://viblo.asia/p/react-native-lifecycle-gAm5yXY8ldb
@@ -28,12 +28,7 @@ export default class StateAndLifeCycle extends Component {
     return (
       <>
         <Text
-          style={{
-            backgroundColor: 'yellow',
-            padding: 4,
-            maxWidth: '50%',
-            textAlign: 'center',
-          }}
+          style={styles.main}
           onPress={
             this.upCount
           }>{`III.State And Life Cycle  ${this.state.count}`}</Text>
@@ -44,3 +39,12 @@ export default class StateAndLifeCycle extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  main: {
+    backgroundColor: 'yellow',
+    padding: 4,
+    maxWidth: '50%',
+    textAlign: 'center',
+  },
+});
