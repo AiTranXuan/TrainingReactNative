@@ -27,10 +27,10 @@ export default class ConditionalRendering extends Component {
         );
       case 2:
         return (
-          <>
+          <View style={{flexDirection:'row'}}>
             <Image source={{uri}} resizeMode="contain" style={styles.img} />
             <Image source={{uri}} resizeMode="contain" style={styles.img} />
-          </>
+          </View>
         );
       default:
         return null;

@@ -1,9 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import Day02 from './day02/';
-import Day05 from './day05/';
-
-export default class Screens extends Component {
+import Content from './Content';
+import Header from './Header';
+export default class Day05 extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {};
@@ -12,12 +11,13 @@ export default class Screens extends Component {
   render() {
     return (
       <View style={styles.main}>
-        <Day05 />
+        <Header />
+        <Content />
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  main: {height: '100%'},
+  main: {width: '100%', paddingLeft: 12},
 });

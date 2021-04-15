@@ -15,6 +15,7 @@ export default class StateAndLifeCycle extends Component {
 
   upCount = () => {
     this.setState({count: this.state.count + 1});
+    this.showChildComponent();
   };
 
   showChildComponent = () => {
@@ -33,7 +34,10 @@ export default class StateAndLifeCycle extends Component {
             this.upCount
           }>{`III.State And Life Cycle  ${this.state.count}`}</Text>
         {this.state.visable && (
-          <ChildComponent onPress={this.showChildComponent} />
+          <ChildComponent
+            containerStyles={{backgroundColor: 'blue', width: 250, height: 250}}
+            onPress={this.showChildComponent}
+          />
         )}
       </>
     );

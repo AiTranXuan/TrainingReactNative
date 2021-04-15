@@ -14,10 +14,10 @@ export default class Day02 extends Component {
   render() {
     return (
       <View style={styles.main}>
-        <JSX />
-        <ComponentAndProps />
+        {/* <JSX /> */}
+        {/* <ComponentAndProps /> */}
         <StateAndLifeCycle />
-        <ConditionalRendering />
+        {/* <ConditionalRendering /> */}
       </View>
     );
   }
