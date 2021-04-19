@@ -5,9 +5,11 @@ export default class ChildComponent extends React.PureComponent {
     console.log('componentWillUnmount ChildComponent');
   }
   render() {
-    const {onPress,containerStyles} = this.props;
+    const {onPress, containerStyles} = this.props;
     return (
-      <TouchableOpacity onPress={onPress} style={[styles.main, containerStyles]}>
+      <TouchableOpacity
+        onPress={onPress}
+        style={[styles.main, containerStyles]}>
         <Text>{'ChildComponent '}</Text>
       </TouchableOpacity>
     );

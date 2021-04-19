@@ -1,0 +1,6 @@
+export default {
+  FIST_LOGIN: 'FIST_LOGIN',
+  LANGUAGE: 'LANGUAGE',
+  USER_INFO: 'USER_INFO',
+  X_TOKEN: 'X_TOKEN',
+};
