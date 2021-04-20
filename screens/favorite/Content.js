@@ -1,28 +1,7 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, TouchableOpacity, Text, FlatList} from 'react-native';
 import FastImage from 'react-native-fast-image';
-
-const DATA = [
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    name: 'Nguyễn Văn An',
-    type: {id: 'phone', name: 'Điện thoại'},
-    avatar:
-      'https://www.gettyimages.pt/gi-resources/images/Homepage/Hero/PT/PT_hero_42_153645159.jpg',
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    name: 'Nguyễn Tố Uyên',
-    type: {id: 'phone', name: 'Điện thoại'},
-    avatar: null,
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    name: 'Trần Trung Quân',
-    type: {id: 'phone', name: 'Điện thoại'},
-    avatar: null,
-  },
-];
+import DATA from '../../mock_data/favorite/listFavorite.json';
 
 const Avatar = ({item}) => {
   const isShowImage = item?.avatar || false;
@@ -86,6 +65,7 @@ export default class Content extends Component {
   };
 
   render() {
+    console.log('DATA; ',DATA);
     return (
       <FlatList
         data={DATA}

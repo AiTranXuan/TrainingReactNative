@@ -21,6 +21,6 @@ export default class FavoriteScreen extends React.PureComponent {
 }
 
 const styles = StyleSheet.create({
-  main: {width: '100'},
+  main: {width: '100%'},
   child: {paddingLeft: 12},
 });
